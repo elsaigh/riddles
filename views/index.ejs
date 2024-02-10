@@ -6,6 +6,22 @@
   <title>Riddles</title>
 </head>
 <body>
-  <h2><%= riddle %></h2>
+
+    <p><%= riddle.question %></p>
+
+    <form action="/trial" method="POST">
+      <input type="text" name="userAnswer">
+      <button>Submit</button>
+    </form>
+
+    <form action="/surrender" method="POST">
+      <button>Give Up</button>
+    </form>
+
+
+  <% if (locals.msg) { %>
+    <p><%= msg %></p>
+  <% } %>
+
 </body>
 </html>
