@@ -6,6 +6,7 @@ const app = express()
 const port = 3000
 
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static('public'))
 
 var riddle = { question: '', answer: '' }
 async function setRiddle() {
@@ -21,7 +22,9 @@ async function setRiddle() {
 
 app.get('/', async (req, res) => {
   await setRiddle()
-  res.render('index.ejs', { riddle })
+  res.render('index.ejs', 
+  { riddle, msg: 'Submit your Answer 👆'
+  })
 })
 
 app.post('/trial', async (req, res) => {
@@ -29,11 +32,11 @@ app.post('/trial', async (req, res) => {
   if (riddle.answer === req.body.userAnswer) {
     await setRiddle()
     res.render('index.ejs', {
-      riddle, msg: 'Right!'
+      riddle, msg: 'Right 👍 Great Job 🥳'
     })
   } else {
     res.render('index.ejs', {
-      riddle, msg: 'Wrong!'
+      riddle, msg: 'Wrong 👎 Better Luck 😢'
     })
   }
 })

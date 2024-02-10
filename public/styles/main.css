@@ -1,0 +1,40 @@
+body {
+  background-color: #cde3c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  height: 100vh; /* Ensure the body takes up the full viewport height */
+  margin-top: 0;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+.content {
+  text-align: center; /* Center text within the container */
+  font-family: 'DynaPuff', system-ui;
+  font-weight: bolder;
+}
+h1 {
+  font-family: 'Lumanosimo', cursive;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #d744d9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b500b2;
+}
